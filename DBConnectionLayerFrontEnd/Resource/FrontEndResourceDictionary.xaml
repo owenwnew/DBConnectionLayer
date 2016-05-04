@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DBConnectionLayerFrontEnd.Resource"
+                    xmlns:vm ="clr-namespace:DBConnectionLayerFrontEnd.ViewModel"
+                    xmlns:vw ="clr-namespace:DBConnectionLayerFrontEnd.View">
+
+    
+    
+    
+    
+    
+</ResourceDictionary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-
+using System.Net.Http;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -73,17 +73,19 @@ namespace DBConnectionLayer
             var filter = new BsonDocument();
             var count = 0;
 
-            using (var cursor = await collection.FindAsync(filter))
-            {
-                while (await cursor.MoveNextAsync())
-                {
-                    var batch = cursor.Current;
-                    foreach (var document in batch)
-                        count++;
-                }
+            //using (var cursor = await collection.FindAsync(filter))
+            //{
+            //    while (await cursor.MoveNextAsync())
+            //    {
+            //        var batch = cursor.Current;
+            //        foreach (var document in batch)
+            //            count++;
+            //    }
 
-            }
+            //}
         }
+
+        
 
         //async Task
     }

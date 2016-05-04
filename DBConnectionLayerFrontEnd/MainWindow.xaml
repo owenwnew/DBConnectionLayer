@@ -5,16 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBConnectionLayerFrontEnd"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="700" Width="1000">
+    <Window.Resources>
+        <ResourceDictionary Source="Resource/FrontEndResourceDictionary.xaml"/>
+    </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Button Height="50" Content="Connection Test" Command="{Binding ConnectToDB}"></Button>
-            <Button Height="50" Content="Insert to DB" Command="{Binding InsertToDB}"></Button>
-            <Button Height="50" Content="Export From DB"></Button>
+            <StackPanel Orientation="Vertical">
+                <Menu Height="50" KeyboardNavigation.TabNavigation="Cycle">
+                    <MenuItem Header="connection tests" Height="50">
+                        <MenuItem Header="DB connection test" Command="{Binding ConnectToDB}"/>
+                        <MenuItem Header="DB Insert test" Command="{Binding InsertToDB}"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="300">
+                    <Button Height="50" Content="New Sales Order" Command="{Binding ConnectToDB}"></Button>
+                    <Button Height="50" Content="Customer Management" Command="{Binding InsertToDB}"></Button>
+                    <Button Height="50" Content="Inventory Management"></Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-        <StackPanel>
-            
-        </StackPanel>
-        
+
     </Grid>
 </Window>

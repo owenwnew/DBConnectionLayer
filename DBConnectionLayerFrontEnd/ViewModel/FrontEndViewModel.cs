@@ -10,11 +10,14 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using DBConnectionLayerFrontEnd.Commands;
 using DBConnectionLayer;
-
+using DBConnectionLayerFrontEnd.Resource;
 namespace DBConnectionLayerFrontEnd.ViewModel
 {
-    public class FrontEndViewModel : INotifyPropertyChanged
+    public class FrontEndViewModel : WorkSpacesViewModel, INotifyPropertyChanged
     {
+
+        ReadOnlyCollection<ToolBarViewModel> _toolBarCommands;
+        ObservableCollection<WorkSpacesViewModel> _workSpaces;
         CommandBase _connectToDB;
         CommandBase _insertToDB;
         ConnectToMongoDB _connectedMongo = new ConnectToMongoDB();
@@ -24,7 +27,30 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
         }
 
+        public ReadOnlyCollection<ToolBarViewModel> ToolBarCommands
+        {
+            get
+            {
+                if(_toolBarCommands ==null)
+                {
+                    List<ToolBarViewModel> tbcmds = 
+                }
+
+            }
+
+
+        }
+
+        List<ToolBarViewModel> CreateToolBarCommands()
+        {
+            return new List<ToolBarViewModel> { new ToolBarViewModel(DirStrings.FrontEnd_Customer_Management, new CommandBase(param => this.openCustomerMgtWorkSpace())) };
+        }
         
+        public void openCustomerMgtWorkSpace()
+        {
+
+        }
+
 
         public void connectToDB()
         {
@@ -35,6 +61,18 @@ namespace DBConnectionLayerFrontEnd.ViewModel
         {
             _connectedMongo.insertTestJson();
         }
+
+        public ObservableCollection<CustomerMgtViewModel> CustomerMgts
+        {
+            get
+            {
+                if()
+                
+            }
+
+
+        }
+
 
         #region Icommands
 
@@ -80,7 +118,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
         }
 
-
+        //public ICommand
 
         #endregion
 
