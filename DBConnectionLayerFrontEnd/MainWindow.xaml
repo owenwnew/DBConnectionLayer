@@ -10,23 +10,22 @@
         <ResourceDictionary Source="Resource/FrontEndResourceDictionary.xaml"/>
     </Window.Resources>
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Vertical">
-                <Menu Height="50" KeyboardNavigation.TabNavigation="Cycle">
-                    <MenuItem Header="connection tests" Height="50">
-                        <MenuItem Header="DB connection test" Command="{Binding ConnectToDB}"/>
-                        <MenuItem Header="DB Insert test" Command="{Binding InsertToDB}"/>
-                    </MenuItem>
-                </Menu>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Width="300">
-                    <Button Height="50" Content="New Sales Order" Command="{Binding ConnectToDB}"></Button>
-                    <Button Height="50" Content="Customer Management" Command="{Binding InsertToDB}"></Button>
-                    <Button Height="50" Content="Inventory Management"></Button>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="50" KeyboardNavigation.TabNavigation="Cycle" Grid.Row="0">
+            <MenuItem Header="connection tests" Height="50">
+                <MenuItem Header="DB connection test" Command="{Binding ConnectToDB}"/>
+                <MenuItem Header="DB Insert test" Command="{Binding InsertToDB}"/>
+            </MenuItem>
+        </Menu>
+        
+        <ContentControl x:Name="Toolbar" Grid.Row="1" KeyboardNavigation.TabNavigation="Once" Content="{Binding Path=ToolBarCommands}" ContentTemplate="{StaticResource toolBarTemplate}"/>
+
+        <ContentControl x:Name="workspace" Grid.Row="2" Content="{Binding Path=WorkSpaces}" ContentTemplate="{StaticResource WorkspacesTemplate}"/>
 
     </Grid>
 </Window>

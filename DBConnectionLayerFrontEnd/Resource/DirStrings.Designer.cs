@@ -61,7 +61,7 @@ namespace DBConnectionLayerFrontEnd.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CustomerMgt.
+        ///   Looks up a localized string similar to Customer Management.
         /// </summary>
         internal static string FrontEnd_Customer_Management {
             get {

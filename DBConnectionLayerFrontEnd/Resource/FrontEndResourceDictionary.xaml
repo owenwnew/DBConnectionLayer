@@ -4,9 +4,54 @@
                     xmlns:vm ="clr-namespace:DBConnectionLayerFrontEnd.ViewModel"
                     xmlns:vw ="clr-namespace:DBConnectionLayerFrontEnd.View">
 
+
+
+
+
+    <LinearGradientBrush x:Key="Button_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="LightBlue" Offset="0.963"/>
+        <GradientStop Color="AliceBlue" Offset="0.177"/>
+    </LinearGradientBrush>
+
+    <DataTemplate DataType="{x:Type vm:CustomerMgtViewModel}">
+        <vw:CustomerMgtView/>
+    </DataTemplate>
     
+    <DataTemplate x:Key="toolBarTemplate">
+        <ToolBar ItemsSource="{Binding}" BorderThickness="1" BorderBrush="LightBlue">
+            <ToolBar.ItemTemplate>
+
+                <DataTemplate >
+                    <Button Margin="1,0,0,0" Command="{Binding Path=Command}" VerticalContentAlignment="Center" Background="{StaticResource Button_Background}" Height="30">
+                        <TextBlock Margin="5,0,5,0" Text="{Binding Path=DisplayName}" FontWeight="Black"/>
+                    </Button>
+                    
+                </DataTemplate>
+            </ToolBar.ItemTemplate>    
+            
+        </ToolBar>
+        
+        
+    </DataTemplate>
+
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="Auto">
+            <Button Command="{Binding Path=CloseCommand}" Content="X" Cursor="Hand" VerticalContentAlignment="Bottom" Width="16" Height="16"/>
+            <ContentPresenter Content="{Binding Path=DisplayName}" VerticalAlignment="Center"/>
+
+        </DockPanel>
+    </DataTemplate>
     
-    
-    
-    
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl ItemsSource="{Binding}" ItemTemplate="{StaticResource ClosableTabItemTemplate}" Margin="4">
+            <StatusBar>
+                <Label Height="24" Content="{Binding Path=CurrentStatus, UpdateSourceTrigger=PropertyChanged}"/>
+            </StatusBar>
+ 
+
+        </TabControl>
+
+
+    </DataTemplate>
+
 </ResourceDictionary>

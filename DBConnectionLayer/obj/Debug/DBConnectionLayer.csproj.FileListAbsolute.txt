@@ -5,6 +5,5 @@ D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\bin\Debug\MongoD
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\bin\Debug\MongoDB.Driver.dll
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\bin\Debug\MongoDB.Bson.xml
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\bin\Debug\MongoDB.Driver.xml
-D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\obj\Debug\DBConnectionLayer.csprojResolveAssemblyReference.cache
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\obj\Debug\DBConnectionLayer.dll
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayer\obj\Debug\DBConnectionLayer.pdb

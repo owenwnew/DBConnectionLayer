@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,9 +34,10 @@ namespace DBConnectionLayerFrontEnd.ViewModel
             {
                 if(_toolBarCommands ==null)
                 {
-                    List<ToolBarViewModel> tbcmds = 
+                    List<ToolBarViewModel> tbcmds = this.CreateToolBarCommands();
+                    _toolBarCommands = new ReadOnlyCollection<ToolBarViewModel>(tbcmds); 
                 }
-
+                return _toolBarCommands;
             }
 
 
@@ -43,12 +45,54 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
         List<ToolBarViewModel> CreateToolBarCommands()
         {
-            return new List<ToolBarViewModel> { new ToolBarViewModel(DirStrings.FrontEnd_Customer_Management, new CommandBase(param => this.openCustomerMgtWorkSpace())) };
+            return new List<ToolBarViewModel> {
+                new ToolBarViewModel(DirStrings.FrontEnd_Customer_Management, new CommandBase(param => this.openCustomerMgtWorkSpace()))
+
+
+
+            };
+        }
+
+        public ObservableCollection<WorkSpacesViewModel> WorkSpaces
+        {
+            get
+            {
+                if(_workSpaces==null)
+                {
+                    _workSpaces = new ObservableCollection<WorkSpacesViewModel>();
+                    _workSpaces.CollectionChanged += this.OnWorkSpacesChanged;
+                }
+                return _workSpaces;
+            }
+
         }
         
+        void OnWorkSpacesChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.NewItems != null && e.NewItems.Count != 0)
+                foreach (WorkSpacesViewModel workspace in e.NewItems)
+                    workspace.RequestClose += this.OnWorkSpaceRequestClose;
+
+            if (e.OldItems != null && e.OldItems.Count != 0)
+                foreach (WorkSpacesViewModel workspace in e.OldItems)
+                    workspace.RequestClose -= this.OnWorkSpaceRequestClose;
+        }
+
+        void OnWorkSpaceRequestClose(object sender, EventArgs e)
+        {
+            WorkSpacesViewModel workspace = sender as WorkSpacesViewModel;
+            workspace.Dispose();
+            this.WorkSpaces.Remove(workspace);
+        }
+
         public void openCustomerMgtWorkSpace()
         {
-
+            CustomerMgtViewModel customerMgtWorkSpace = this.WorkSpaces.Where(w => w.DisplayName == "Customer Management").FirstOrDefault() as CustomerMgtViewModel;
+            if(customerMgtWorkSpace == null)
+            {
+                customerMgtWorkSpace = new CustomerMgtViewModel();
+                this.WorkSpaces.Add(customerMgtWorkSpace);
+            }
         }
 
 
@@ -62,16 +106,16 @@ namespace DBConnectionLayerFrontEnd.ViewModel
             _connectedMongo.insertTestJson();
         }
 
-        public ObservableCollection<CustomerMgtViewModel> CustomerMgts
-        {
-            get
-            {
-                if()
+        //public ObservableCollection<CustomerMgtViewModel> CustomerMgts
+        //{
+        //    get
+        //    {
+        //        if()
                 
-            }
+        //    }
 
 
-        }
+        //}
 
 
         #region Icommands

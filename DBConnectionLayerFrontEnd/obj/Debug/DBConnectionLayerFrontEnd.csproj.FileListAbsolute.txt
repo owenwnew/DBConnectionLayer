@@ -19,3 +19,8 @@ D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debu
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.csproj.GenerateResource.Cache
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.exe
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.pdb
+D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\View\CustomerMgtView.g.cs
+D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\Resource\FrontEndResourceDictionary.baml
+D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\View\CustomerMgtView.baml
+D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.Resource.DirStrings.resources
+D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\GeneratedInternalTypeHelper.g.cs

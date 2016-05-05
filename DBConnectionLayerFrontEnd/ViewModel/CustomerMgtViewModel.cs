@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace DBConnectionLayerFrontEnd.ViewModel
 {
-    public class CustomerMgtViewModel
+    public class CustomerMgtViewModel:WorkSpacesViewModel
     {
+        public CustomerMgtViewModel()
+        {
 
+        }
     }
 }
