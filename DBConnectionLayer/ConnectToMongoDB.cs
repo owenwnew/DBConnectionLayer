@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-
+using System.Net.Http;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -85,6 +85,11 @@ namespace DBConnectionLayer
             }
         }
 
+        async Task<int> accessTheDBAsync()
+        {
+
+
+        }
         //async Task
     }
 }

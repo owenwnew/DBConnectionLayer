@@ -19,3 +19,6 @@ D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debu
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.csproj.GenerateResource.Cache
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.exe
 D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.pdb
+C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\bin\Debug\DBConnectionLayerFrontEnd.exe.config
+C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.exe
+C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.pdb
