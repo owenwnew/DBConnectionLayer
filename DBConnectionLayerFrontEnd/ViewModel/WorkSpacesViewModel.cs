@@ -10,14 +10,12 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 {
     public abstract class WorkSpacesViewModel:ViewModelBase
     {
+        CommandBase _closeCommand;
+
         protected WorkSpacesViewModel()
         {
 
         }
-
-
-        CommandBase _closeCommand;
-
         public ICommand CloseCommand
         {
             get

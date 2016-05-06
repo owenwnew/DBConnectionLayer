@@ -9,40 +9,87 @@
 
 
     <LinearGradientBrush x:Key="Button_Background" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="LightBlue" Offset="0.963"/>
-        <GradientStop Color="AliceBlue" Offset="0.177"/>
+
+        <GradientStop Color="DeepSkyBlue" Offset="0.963" />
+        <GradientStop Color="AliceBlue" Offset="0.177" />
+        <GradientStop Color="AliceBlue" Offset="0.41" />
+        <GradientStop Color="#FF8DE0FF" Offset="0.771" />
+
     </LinearGradientBrush>
+
 
     <DataTemplate DataType="{x:Type vm:CustomerMgtViewModel}">
         <vw:CustomerMgtView/>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="toolBarTemplate">
-        <ToolBar ItemsSource="{Binding}" BorderThickness="1" BorderBrush="LightBlue">
+        <ToolBar ItemsSource="{Binding}" BorderThickness="1" BorderBrush="LightGray" >
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="WhiteSmoke" Offset="1" />
+                    <GradientStop Color="White" Offset="0.409" />
+                </LinearGradientBrush>
+            </ToolBar.Background>
             <ToolBar.ItemTemplate>
 
-                <DataTemplate >
-                    <Button Margin="1,0,0,0" Command="{Binding Path=Command}" VerticalContentAlignment="Center" Background="{StaticResource Button_Background}" Height="30">
-                        <TextBlock Margin="5,0,5,0" Text="{Binding Path=DisplayName}" FontWeight="Black"/>
+                <DataTemplate>
+
+                    <Button Margin="1,0,0,0" Command="{Binding Path=Command}"
+                            
+                            VerticalContentAlignment="Center"
+                            Background ="{StaticResource Button_Background}"
+                            Foreground="Black"
+                            BorderBrush="DeepSkyBlue"
+                            Height="30"
+                            FocusVisualStyle="{DynamicResource MyFocusVisual}"
+                            Cursor="Hand"
+                            >
+                        <!--Background ="{StaticResource Button_Background}"-->
+                        <TextBlock Margin="5,0,5,0" Text="{Binding Path=DisplayName}"   FontWeight="Black" />
+                        <!--<Button.Style>
+                            <Style >
+                                <Setter Property="Button.Background" Value="{StaticResource Button_Background}" />
+                                <Style.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Button.Background" Value="{StaticResource MouseOverBackground}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>-->
+
                     </Button>
-                    
                 </DataTemplate>
-            </ToolBar.ItemTemplate>    
-            
+            </ToolBar.ItemTemplate>
         </ToolBar>
-        
-        
+
     </DataTemplate>
 
     <DataTemplate x:Key="ClosableTabItemTemplate">
-        <DockPanel Width="Auto">
-            <Button Command="{Binding Path=CloseCommand}" Content="X" Cursor="Hand" VerticalContentAlignment="Bottom" Width="16" Height="16"/>
-            <ContentPresenter Content="{Binding Path=DisplayName}" VerticalAlignment="Center"/>
+        <DockPanel Width="Auto" >
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"
+        FontWeight="Bold"  
+        Margin="5,1,5,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16" 
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}" 
+        VerticalAlignment="Center" 
+        />
 
         </DockPanel>
+
     </DataTemplate>
-    
-    <DataTemplate x:Key="WorkspacesTemplate">
+
+    <!--<DataTemplate x:Key="WorkspacesTemplate">
         <TabControl ItemsSource="{Binding}" ItemTemplate="{StaticResource ClosableTabItemTemplate}" Margin="4">
             <StatusBar>
                 <Label Height="24" Content="{Binding Path=CurrentStatus, UpdateSourceTrigger=PropertyChanged}"/>
@@ -52,6 +99,35 @@
         </TabControl>
 
 
+    </DataTemplate>-->
+
+
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TabControl Grid.Row="0" 
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}" 
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+                 
+                  
+      />
+
+
+            <StatusBar  Grid.Row="1" >
+                <!-- <ProgressBar Visibility="{Binding Path=ProgressBarVisibility, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" Width ="120" Value="{Binding Path=Progress, UpdateSourceTrigger=PropertyChanged}" Height="20"/> -->
+
+
+                <Label Height="24" Content ="{Binding Path=CurrentStatus, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </StatusBar>
+        </Grid>
     </DataTemplate>
+
 
 </ResourceDictionary>

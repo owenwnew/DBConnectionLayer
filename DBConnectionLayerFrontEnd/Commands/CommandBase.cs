@@ -34,13 +34,13 @@ namespace DBConnectionLayerFrontEnd.Commands
 
 
         //constructor used in tutorial
-        private FrontEndViewModel _viewModel;
-        public CommandBase(FrontEndViewModel viewModel)
-        {
+        //private FrontEndViewModel _viewModel;
+        //public CommandBase(FrontEndViewModel viewModel)
+        //{
 
-            _viewModel = viewModel;
+        //    _viewModel = viewModel;
 
-        }
+        //}
 
         //ICommand interface Members
         public bool CanExecute(object parameter)

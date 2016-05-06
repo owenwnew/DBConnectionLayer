@@ -9,12 +9,14 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Data;
 using DBConnectionLayerFrontEnd.Commands;
 using DBConnectionLayer;
 using DBConnectionLayerFrontEnd.Resource;
 namespace DBConnectionLayerFrontEnd.ViewModel
 {
-    public class FrontEndViewModel : WorkSpacesViewModel, INotifyPropertyChanged
+    public class FrontEndViewModel : WorkSpacesViewModel
     {
 
         ReadOnlyCollection<ToolBarViewModel> _toolBarCommands;
@@ -93,6 +95,16 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerMgtWorkSpace = new CustomerMgtViewModel();
                 this.WorkSpaces.Add(customerMgtWorkSpace);
             }
+            this.SetActiveWorkspace(customerMgtWorkSpace);
+        }
+
+        void SetActiveWorkspace(WorkSpacesViewModel workspace)
+        {
+            Debug.Assert(this.WorkSpaces.Contains(workspace));
+
+            ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.WorkSpaces);
+            if (collectionView != null)
+                collectionView.MoveCurrentTo(workspace);
         }
 
 
@@ -167,20 +179,20 @@ namespace DBConnectionLayerFrontEnd.ViewModel
         #endregion
 
         #region INotification interface
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string PropertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged; //this is the samething as
-            //handler = new event PropertyChangedEventHandler PropertyChanged
+        //public void OnPropertyChanged(string PropertyName)
+        //{
+        //    PropertyChangedEventHandler handler = PropertyChanged; //this is the samething as
+        //    //handler = new event PropertyChangedEventHandler PropertyChanged
 
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(PropertyName));
-            }
+        //    if (handler != null)
+        //    {
+        //        handler(this, new PropertyChangedEventArgs(PropertyName));
+        //    }
 
 
-        }
+        //}
 
         #endregion
     }
