@@ -27,6 +27,20 @@ namespace DBConnectionLayer
             
         }
 
+
+        public void insertDocumentToDB(BsonDocument Document, string collectionName)
+        {
+
+            if(Document != null)
+            {
+
+                var collection = _dataBase.GetCollection<BsonDocument>(collectionName);
+
+                collection.InsertOneAsync(Document);
+
+            }
+        }
+
         public void insertTestJson()
         {
             var document = new BsonDocument
@@ -73,23 +87,25 @@ namespace DBConnectionLayer
             var filter = new BsonDocument();
             var count = 0;
 
-            using (var cursor = await collection.FindAsync(filter))
-            {
-                while (await cursor.MoveNextAsync())
-                {
-                    var batch = cursor.Current;
-                    foreach (var document in batch)
-                        count++;
-                }
+            //using (var cursor = await collection.FindAsync(filter))
+            //{
+            //    while (await cursor.MoveNextAsync())
+            //    {
+            //        var batch = cursor.Current;
+            //        foreach (var document in batch)
+            //            count++;
+            //    }
 
-            }
+            //}
         }
 
-        async Task<int> accessTheDBAsync()
-        {
+        
+
+        //async Task<int> accessTheDBAsync()
+        //{
 
 
-        }
+        //}
         //async Task
     }
 }
