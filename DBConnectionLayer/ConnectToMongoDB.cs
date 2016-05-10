@@ -40,6 +40,7 @@ namespace DBConnectionLayer
 
             }
         }
+<<<<<<< HEAD
         
         public void updateDocumentInDB (BsonDocument Document, string collectionName, string documentIDTag, string documentID, string tagID)
         {
@@ -63,6 +64,8 @@ namespace DBConnectionLayer
         }
 
 
+=======
+>>>>>>> origin/master
 
         public void insertTestJson()
         {

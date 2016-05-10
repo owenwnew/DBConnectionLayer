@@ -49,5 +49,8 @@ Temporary Items
 *.suo
 .vs/DBConnectionLayer/v14/.suo
 .vs/DBConnectionLayer/v14/.suo
+<<<<<<< HEAD
 .vs/DBConnectionLayer/v14/.suo
 .vs/DBConnectionLayer/v14/.suo
+=======
+>>>>>>> origin/master

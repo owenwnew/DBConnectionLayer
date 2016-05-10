@@ -58,6 +58,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
         }
 
+<<<<<<< HEAD
         public void clearActionResult()
         {
 
@@ -65,6 +66,8 @@ namespace DBConnectionLayerFrontEnd.ViewModel
             OnPropertyChanged(ActionResult);
         }
 
+=======
+>>>>>>> origin/master
         #region properties
         #region CustomerMgtModelProperties
         public string customerName
@@ -76,7 +79,10 @@ namespace DBConnectionLayerFrontEnd.ViewModel
             set
             {
                 customerDocumentModel.customerName = value;
+<<<<<<< HEAD
                 clearActionResult();
+=======
+>>>>>>> origin/master
             }
 
 
@@ -93,7 +99,10 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.companyName = value;
                 if (value == null)
                     customerDocumentModel.companyName = "";
+<<<<<<< HEAD
                 clearActionResult();
+=======
+>>>>>>> origin/master
             }
 
 
@@ -109,11 +118,30 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.primaryPhone = value;
                 if (value == null)
                     customerDocumentModel.primaryPhone = "";
+<<<<<<< HEAD
                 clearActionResult();
+=======
             }
 
 
         }
+        public string secondaryPhone
+        {
+            get
+            {
+                return customerDocumentModel.secondaryPhone;
+            }
+            set
+            {
+                customerDocumentModel.secondaryPhone = value;
+                if (value == null)
+                    customerDocumentModel.secondaryPhone = "";
+>>>>>>> origin/master
+            }
+
+
+        }
+<<<<<<< HEAD
         public string secondaryPhone
         {
             get
@@ -130,6 +158,8 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
 
         }
+=======
+>>>>>>> origin/master
         public string emailAddress
         {
             get
@@ -141,6 +171,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.emailAddress = value;
                 if (value == null)
                     customerDocumentModel.emailAddress = "";
+<<<<<<< HEAD
                 clearActionResult();
             }
 
@@ -186,7 +217,50 @@ namespace DBConnectionLayerFrontEnd.ViewModel
         }
 
         #endregion
+=======
+            }
 
+>>>>>>> origin/master
+
+        }
+        public string companyLocation
+        {
+            get
+            {
+                return customerDocumentModel.companyLocation;
+            }
+            set
+            {
+                customerDocumentModel.companyLocation = value;
+                if (value == null)
+                    customerDocumentModel.companyLocation = "";
+            }
+
+
+        }
+        public string comments
+        {
+            get
+            {
+                return customerDocumentModel.comments;
+            }
+            set
+            {
+                customerDocumentModel.comments = value;
+                if (value == null)
+                    customerDocumentModel.comments = "";
+            }
+
+
+        }
+        #endregion
+
+        public string ActionResult {
+            get;
+            set;
+        }
+
+        #endregion
         #region Icommands
 
         public ICommand InsertToDB

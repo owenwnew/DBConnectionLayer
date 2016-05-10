@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\App.xaml
+<<<<<<< HEAD
 51271155041
 
 20-793099763
 17-2140874138
 MainWindow.xaml;Resource\FrontEndResourceDictionary.xaml;View\CustomerMgtView.xaml;View\InvoiceItemListView.xaml;View\OrderMgtView.xaml;
+=======
+3439113158
+
+1479612457
+17-2140874138
+MainWindow.xaml;Resource\FrontEndResourceDictionary.xaml;View\CustomerMgtView.xaml;
+>>>>>>> origin/master
 
 False
 

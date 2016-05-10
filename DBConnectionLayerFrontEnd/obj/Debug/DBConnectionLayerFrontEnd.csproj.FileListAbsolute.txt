@@ -45,6 +45,7 @@ C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DB
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.Properties.Resources.resources
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.Resource.DirStrings.resources
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 F:\DBConnectionLayer\DBConnectionLayerFrontEnd\bin\Debug\DBConnectionLayerFrontEnd.exe.config
 F:\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.exe
 F:\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\DBConnectionLayerFrontEnd.pdb
@@ -79,3 +80,5 @@ C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\Vi
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\View\OrderMgtView.g.cs
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\View\InvoiceItemListView.baml
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\View\OrderMgtView.baml
+=======
+>>>>>>> origin/master

@@ -70,8 +70,11 @@
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\ViewModelBase.cs" />
     <Compile Include="Model\CustomerMgtModel.cs" />
+<<<<<<< HEAD
     <Compile Include="Model\InvoiceItemListModel.cs" />
     <Compile Include="Model\OrderMgtModel.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="Resource\DirStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
