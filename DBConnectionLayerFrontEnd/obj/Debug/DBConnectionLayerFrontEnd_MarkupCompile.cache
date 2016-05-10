@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\
+C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\obj\Debug\
 DBConnectionLayerFrontEnd
 none
 false
 DEBUG;TRACE
-D:\software\DBConnectionLib\DBConnectionLayer\DBConnectionLayerFrontEnd\App.xaml
-11151548125
+C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\App.xaml
+3439113158
 
-7-667597502
-172046031581
-MainWindow.xaml;
+1479612457
+17-2140874138
+MainWindow.xaml;Resource\FrontEndResourceDictionary.xaml;View\CustomerMgtView.xaml;
 
 False
 
