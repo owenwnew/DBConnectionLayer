@@ -120,4 +120,10 @@
   <data name="FrontEnd_Customer_Management" xml:space="preserve">
     <value>Customer Management</value>
   </data>
+  <data name="FrontEnd_Invoice_Management" xml:space="preserve">
+    <value>Invoice List</value>
+  </data>
+  <data name="FrontEnd_Order_Management" xml:space="preserve">
+    <value>Order Management</value>
+  </data>
 </root>

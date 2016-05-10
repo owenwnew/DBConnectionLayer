@@ -40,6 +40,29 @@ namespace DBConnectionLayer
 
             }
         }
+        
+        public void updateDocumentInDB (BsonDocument Document, string collectionName, string documentIDTag, string documentID, string tagID)
+        {
+            var colleciton = _dataBase.GetCollection<BsonDocument>(collectionName);
+            //colleciton.update({ documentIDTag: documentID},
+            //        {$addToSet: { tagID: { $each:[Document]} } } );
+
+            colleciton.UpdateOne(new BsonDocument { { documentIDTag, documentID } }, Document);
+
+            
+        }
+
+        public int numberOfDocumentsInCollection(string collectionName)
+        {
+            int numberOfDocuments = 0;
+
+            var collection = _dataBase.GetCollection<BsonDocument>(collectionName);
+            numberOfDocuments = Convert.ToInt16( collection.Count("",null));
+            
+            return numberOfDocuments;
+        }
+
+
 
         public void insertTestJson()
         {

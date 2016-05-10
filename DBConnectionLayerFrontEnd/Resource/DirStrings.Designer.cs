@@ -68,5 +68,23 @@ namespace DBConnectionLayerFrontEnd.Resource {
                 return ResourceManager.GetString("FrontEnd_Customer_Management", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice List.
+        /// </summary>
+        internal static string FrontEnd_Invoice_Management {
+            get {
+                return ResourceManager.GetString("FrontEnd_Invoice_Management", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Management.
+        /// </summary>
+        internal static string FrontEnd_Order_Management {
+            get {
+                return ResourceManager.GetString("FrontEnd_Order_Management", resourceCulture);
+            }
+        }
     }
 }

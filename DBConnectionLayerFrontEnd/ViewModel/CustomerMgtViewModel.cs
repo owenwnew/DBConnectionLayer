@@ -58,6 +58,13 @@ namespace DBConnectionLayerFrontEnd.ViewModel
 
         }
 
+        public void clearActionResult()
+        {
+
+            ActionResult = "";
+            OnPropertyChanged(ActionResult);
+        }
+
         #region properties
         #region CustomerMgtModelProperties
         public string customerName
@@ -69,6 +76,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
             set
             {
                 customerDocumentModel.customerName = value;
+                clearActionResult();
             }
 
 
@@ -85,6 +93,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.companyName = value;
                 if (value == null)
                     customerDocumentModel.companyName = "";
+                clearActionResult();
             }
 
 
@@ -100,6 +109,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.primaryPhone = value;
                 if (value == null)
                     customerDocumentModel.primaryPhone = "";
+                clearActionResult();
             }
 
 
@@ -115,6 +125,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.secondaryPhone = value;
                 if (value == null)
                     customerDocumentModel.secondaryPhone = "";
+                clearActionResult();
             }
 
 
@@ -130,6 +141,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.emailAddress = value;
                 if (value == null)
                     customerDocumentModel.emailAddress = "";
+                clearActionResult();
             }
 
 
@@ -145,6 +157,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.companyLocation = value;
                 if (value == null)
                     customerDocumentModel.companyLocation = "";
+                clearActionResult();
             }
 
 
@@ -160,6 +173,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 customerDocumentModel.comments = value;
                 if (value == null)
                     customerDocumentModel.comments = "";
+                clearActionResult();
             }
 
 
@@ -172,6 +186,7 @@ namespace DBConnectionLayerFrontEnd.ViewModel
         }
 
         #endregion
+
         #region Icommands
 
         public ICommand InsertToDB

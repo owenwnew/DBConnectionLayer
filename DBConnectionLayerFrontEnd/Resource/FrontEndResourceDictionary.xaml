@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DBConnectionLayerFrontEnd.Resource"
                     xmlns:vm ="clr-namespace:DBConnectionLayerFrontEnd.ViewModel"
-                    xmlns:vw ="clr-namespace:DBConnectionLayerFrontEnd.View">
+                    xmlns:vw ="clr-namespace:DBConnectionLayerFrontEnd.View"
+                    xmlns:md ="clr-namespace:DBConnectionLayerFrontEnd.Model">
 
 
 
@@ -20,6 +21,15 @@
 
     <DataTemplate DataType="{x:Type vm:CustomerMgtViewModel}">
         <vw:CustomerMgtView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:OrderMgtViewModel}">
+        <vw:OrderMgtView/>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type vm:InvoiceItemListViewModel}">
+        <vw:InvoiceItemListView/>
     </DataTemplate>
 
     <DataTemplate x:Key="toolBarTemplate">
@@ -64,6 +74,27 @@
 
     </DataTemplate>
 
+
+
+    <DataTemplate x:Key="InvoiceItemListGridTemplate" >
+        <StackPanel Orientation="Vertical">
+            <DataGrid AllowDrop="True" AlternatingRowBackground="Lavender" AlternationCount="2" RowDetailsVisibilityMode="VisibleWhenSelected"  EnableRowVirtualization="True" ItemsSource="{Binding}" AutoGenerateColumns="False" VerticalAlignment="Stretch" Margin="2,2,2,0" Background="WhiteSmoke" CanUserAddRows="True" CanUserDeleteRows="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=invoicedItem}" Header="Invoiced Item" Width="SizeToHeader" />
+                    <DataGridTextColumn Binding="{Binding Path=quantity}" Header="Quantity" Width="SizeToHeader" />
+                    <DataGridTextColumn Binding="{Binding Path=unitPrice}" Header="Unit Price" Width="SizeToHeader" />
+                    <DataGridTextColumn Binding="{Binding Path=totalPrice}" Header="Total Price" Width="Auto" />
+                    <DataGridTextColumn Binding="{Binding Path=itemCatagory}" Header="Item Catagory" Width="SizeToHeader" />
+                    <DataGridTextColumn Binding="{Binding Path=paymentOption}" Header="Payment Option" Width="SizeToHeader" />
+                    
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </StackPanel>
+    </DataTemplate>
+
+
     <DataTemplate x:Key="ClosableTabItemTemplate">
         <DockPanel Width="Auto" >
             <Button 
@@ -87,6 +118,22 @@
 
         </DockPanel>
 
+    </DataTemplate>
+
+    <DataTemplate x:Key="OrdersWorkspacesTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TabControl Grid.Row="0"
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}" 
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+      />
+        </Grid>
     </DataTemplate>
 
     <!--<DataTemplate x:Key="WorkspacesTemplate">

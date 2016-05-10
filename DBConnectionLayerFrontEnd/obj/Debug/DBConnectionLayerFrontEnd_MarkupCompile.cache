@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Software Development\DBConnectionLayer\DBConnectionLayerFrontEnd\App.xaml
-3439113158
+51271155041
 
-1479612457
+20-793099763
 17-2140874138
-MainWindow.xaml;Resource\FrontEndResourceDictionary.xaml;View\CustomerMgtView.xaml;
+MainWindow.xaml;Resource\FrontEndResourceDictionary.xaml;View\CustomerMgtView.xaml;View\InvoiceItemListView.xaml;View\OrderMgtView.xaml;
 
 False
 

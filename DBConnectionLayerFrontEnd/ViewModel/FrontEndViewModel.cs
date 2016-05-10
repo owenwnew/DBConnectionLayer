@@ -47,8 +47,8 @@ namespace DBConnectionLayerFrontEnd.ViewModel
         List<ToolBarViewModel> CreateToolBarCommands()
         {
             return new List<ToolBarViewModel> {
-                new ToolBarViewModel(DirStrings.FrontEnd_Customer_Management, new CommandBase(param => this.openCustomerMgtWorkSpace()))
-
+                new ToolBarViewModel(DirStrings.FrontEnd_Customer_Management, new CommandBase(param => this.openCustomerMgtWorkSpace())),
+                new ToolBarViewModel(DirStrings.FrontEnd_Order_Management, new CommandBase(param => this.openOrderMgtWorkSpace()))
 
 
             };
@@ -95,6 +95,18 @@ namespace DBConnectionLayerFrontEnd.ViewModel
                 this.WorkSpaces.Add(customerMgtWorkSpace);
             }
             this.SetActiveWorkspace(customerMgtWorkSpace);
+        }
+
+        public void openOrderMgtWorkSpace()
+        {
+            //OrderMgtViewModel orderMgtWorkSpace = this.WorkSpaces.FirstOrDefault(vm => vm is OrderMgtViewModel) as OrderMgtViewModel;
+            OrderMgtViewModel orderMgtWorkSpace = this.WorkSpaces.Where(w => w.DisplayName == "Order Management").FirstOrDefault() as OrderMgtViewModel;
+            if (orderMgtWorkSpace == null)
+            {
+                orderMgtWorkSpace = new OrderMgtViewModel();
+                this.WorkSpaces.Add(orderMgtWorkSpace);
+            }
+            this.SetActiveWorkspace(orderMgtWorkSpace);
         }
 
         void SetActiveWorkspace(WorkSpacesViewModel workspace)

@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <Menu Height="50" KeyboardNavigation.TabNavigation="Cycle" Grid.Row="0">
-            <MenuItem Header="connection tests" Height="50">
+            <MenuItem Header="" Height="50">
                 <MenuItem Header="DB connection test" Command="{Binding ConnectToDB}"/>
             </MenuItem>
         </Menu>

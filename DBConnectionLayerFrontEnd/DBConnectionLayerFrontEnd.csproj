@@ -70,6 +70,8 @@
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\ViewModelBase.cs" />
     <Compile Include="Model\CustomerMgtModel.cs" />
+    <Compile Include="Model\InvoiceItemListModel.cs" />
+    <Compile Include="Model\OrderMgtModel.cs" />
     <Compile Include="Resource\DirStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,10 +79,18 @@
     </Compile>
     <Compile Include="ViewModel\CustomerMgtViewModel.cs" />
     <Compile Include="ViewModel\FrontEndViewModel.cs" />
+    <Compile Include="ViewModel\InvoiceItemListViewModel.cs" />
+    <Compile Include="ViewModel\OrderMgtViewModel.cs" />
     <Compile Include="ViewModel\ToolBarViewModel.cs" />
     <Compile Include="ViewModel\WorkSpacesViewModel.cs" />
     <Compile Include="View\CustomerMgtView.xaml.cs">
       <DependentUpon>CustomerMgtView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InvoiceItemListView.xaml.cs">
+      <DependentUpon>InvoiceItemListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderMgtView.xaml.cs">
+      <DependentUpon>OrderMgtView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +109,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CustomerMgtView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InvoiceItemListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderMgtView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
